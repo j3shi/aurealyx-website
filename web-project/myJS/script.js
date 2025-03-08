@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         span.textContent = letter;
         span.classList.add("popLetter");
         header.appendChild(span);
+
+        
 });
+
 
 function createAuroraWave() {
     const auroraContainer = document.createElement("div");
@@ -41,3 +44,20 @@ function createAuroraWave() {
     }, 30000);
 }
 });
+
+gsap.registerEffect({
+    name: "fade",
+    effect: (targets, config) => {
+      return gsap.from(targets, {
+        duration: config.duration,
+        opacity: 0
+      });
+    },
+    defaults: {duration: 10},
+    extendTimeline: true
+  });
+
+gsap.effects.fade(".header", {duration: 8});
+gsap.effects.fade(".headline", {duration: 3});
+gsap.effects.fade(".subheadline", {duration: 3});
+
