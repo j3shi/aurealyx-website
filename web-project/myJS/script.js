@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollBtn = document.getElementById('scrollToServices');
+  const servicesSection = document.getElementById('services');
+  if(scrollBtn && servicesSection) {
+    scrollBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    })
+  }
+})
+
 
 function createAuroraWave() {
     const auroraContainer = document.createElement("div");
@@ -60,4 +71,5 @@ gsap.registerEffect({
 gsap.effects.fade(".header", {duration: 8});
 gsap.effects.fade(".headline", {duration: 3});
 gsap.effects.fade(".subheadline", {duration: 3});
-
+gsap.effects.fade(".button", {duration: 3});
+gsap.effects.fade(".footer", {duration: 8});

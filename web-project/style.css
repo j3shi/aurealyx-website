@@ -1,6 +1,6 @@
-main {
-    min-height: 150vh;
-}
+
+
+
 
 body {
     margin: 0;
@@ -11,6 +11,12 @@ body {
 }
 
 header {
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     background: transparent;
     position: relative;
@@ -18,9 +24,30 @@ header {
     text-align: center;
 }
 
+header p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 20px auto 0 auto;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 0 0 20px 0;
     display: flex;
     justify-content: center;
     margin: 0;
@@ -146,51 +173,41 @@ h2 {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }   
 
-p {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 20px;
-}
-
-#journey ol{
-    color: white;
-    list-style: none;
-    padding: 0;
-    text-align:  left;
-    max-width: 600px;
-    margin: auto;
-}
-
-#journey li {
-    background: transparent;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-#journey li:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.services-container {
+#services {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
-    padding: 40px;
+    justify-content: center;
+    padding: 50px 0;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 500px;
+    height: 500px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s, background 0.3s;
+    padding: 32px 24px;
+    box-sizing: border-box;
+    
+}
+
+.service p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .service:hover {
@@ -198,8 +215,17 @@ p {
     background: rgba(255, 255, 255, 0.2);
 }
 
+#worldwideweb,
+#socialmedia {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
 footer {
     text-align: center;
     padding: 20px;
+    
 }
+
 
