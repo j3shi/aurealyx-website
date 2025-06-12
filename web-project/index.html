@@ -11,14 +11,18 @@
 <body>
 
     <header class="header">
+
+        <section id="hero">
         <img src="images/tundravisuals.logo.png" alt="TundraVisuals Logo" class="logo">
         <h1 id="popHeader">AUREALYX</h1>
         <nav class="links">
             <ul>
-                <li><a href="#" id="scrollToServices">services</a></li>
-                <li><a href="about.html">about</a></li>
+                <li><a href="#" id="scrollToServices">Services</a></li>
+                <li><a href="#" id="scrollToAbout">About</a></li>
+                <li><a href="#" id="scrollToContact">Contact</a></li>
             </ul>
         </nav>
+        </section>
 
         <h2 class="headline">Crafting Websites & Socials That Shine</h2>
         <p class="subheadline">At Aurealyx, we help you stand out online with stunning websites and social media magic — all done with heart.</p>
@@ -26,7 +30,9 @@
         <button class="button" onclick="location.href='portfolio.html'"> Check out portfolio!</button>
     </header>
 
-<h2>services</h2>
+
+ <section id="information">
+    <h2>Services</h2>
     <section id="services">
         <div class="service">
             <h3>Web Design</h3>
@@ -39,13 +45,39 @@
             <img src="images/social-media.png" alt="socialmedia" id="socialmedia">
         </div>
     </section>
+</section>
 
 
-<h2>about</h2>
+<section id="information">
+    <h2>About</h2>
+    <section id="about">
+        <p>At Aurealyx, we help businesses stand out online with stunning websites and smart social media strategies. Whether you’re just starting out or looking to grow, we make sure your digital presence reflects your brand — clearly, creatively, and professionally.
+            <br>
+        We know running a business is a lot of work. That’s why we handle the web stuff for you — from building beautiful, responsive websites to managing your social media, so you can focus on what you do best.
+        <br>
+        Aurealyx was born from a simple idea: your online presence should work for you — not the other way around.
+        <br>
+        Let’s build something great together.</p>
+    </section>
+</section>
 
-<section id="journey">
-    <h3>Our Journey</h3>
-    <p>Aurealyx was founded with a passion for helping businesses thrive online. Our team of experts is dedicated to delivering exceptional digital experiences that drive results.</p>
+<section id="information">
+<h2>Contact</h2>
+    <section id="contact">
+     <div class="form-container">
+      <form class="form" action="https://formspree.io/f/manjojkg" method="POST">
+        <div class="form-group">
+          <label for="email">Company Email</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="textarea">How Can We Help You?</label>
+          <textarea name="message" id="textarea" rows="10" cols="50" required></textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+      </form>
+     </div>
+    </section>
 </section>
 
     <footer class="footer">
