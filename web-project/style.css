@@ -1,7 +1,3 @@
-main {
-    min-height: 150vh;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -11,11 +7,25 @@ body {
 }
 
 header {
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     background: transparent;
     position: relative;
     z-index: 10;
     text-align: center;
+    top: -40px;
+}
+
+
+header p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
 nav ul {
@@ -23,7 +33,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 nav ul li {
@@ -36,17 +46,20 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 5px 10px;
 }
 
 nav ul li a:hover {
-    color: gray;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .logo {
     width: 100px;
     height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
 }
 
 .logo a:hover {
@@ -61,7 +74,7 @@ nav ul li a:hover {
     height: 100vh;
     pointer-events: none;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0; /* Make sure aurora stays at the very back */
 }
 
 .aurora span {
@@ -114,13 +127,14 @@ nav ul li a:hover {
 }
 
 .contact-links a:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     display: flex;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 5px;
 }
 
 h1 span {
@@ -146,60 +160,239 @@ h2 {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }   
 
-p {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 20px;
-}
-
-#journey ol{
-    color: white;
-    list-style: none;
-    padding: 0;
-    text-align:  left;
-    max-width: 600px;
-    margin: auto;
-}
-
-#journey li {
-    background: transparent;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-#journey li:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.services-container {
+#services {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
-    padding: 40px;
+    justify-content: center;
+    padding: 50px 0;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 500px;
+    height: 500px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s, background 0.3s;
+    padding: 32px 24px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    
 }
 
-.service:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+.service h3 {
+    color: white;
+}
+.service p {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.service img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: 8px;
+    filter: brightness(0) invert(1);
+}
+
+#about {
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    background: transparent;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#information {
+    height: 100vh;
+}
+
+#information h2 {
+    top: 20px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
+    
 }
+
+#worldwideweb,
+#socialmedia {
+    width: 100px;
+    height: 100px;
+    padding-top: 20px;
+}
+
+/* From Uiverse.io by barisdogansutcu */ 
+.button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  box-shadow: white;
+}
+
+.button:active {
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  box-shadow: white;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.form-container {
+  width: 600px;
+  background: transparent; 
+  border: none;                   
+  border-radius: 10px;            
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+  color: white;
+  padding: 50px 24px;            
+  font-size: 14px;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input {
+  width: 90%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.form-container .form-group textarea {
+  width: 90%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: #fff;
+  height: 96px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: #717171;
+  font-weight: 600;
+  width: 40%;
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* Main content elements: */
+header,
+#services,
+#about,
+#information,
+footer,
+.form-container,
+.button,
+nav,
+h1,
+h2,
+h3,
+.service,
+.contact-links {
+    position: relative;
+    z-index: 1; /* Make sure these are above the aurora */
+}
+
+
+
 
