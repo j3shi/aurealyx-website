@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +11,7 @@ body {
 }
 
 header {
-    height: 100vh;
+    height: 110vh;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -37,13 +41,36 @@ header p {
     box-shadow: white 0 0 10px;
 }
 
-#backbtn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #222;
-    color: white;
-    cursor: pointer;
+.button {
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.button:hover {
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  box-shadow: white;
+}
+
+.button:active {
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  box-shadow: white;
+  transform: translateY(10px);
+  transition: 100ms;
 }
 
 #portfolio {
@@ -104,4 +131,50 @@ header p {
     flex: 0 0 auto;
     scroll-snap-align: center;
     background: #111;
+}
+
+.skyfall{
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    background: transparent;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+   
+    html, body {
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 100vh;
+        min-height: 300px;
+        padding: 10px;
+    }
+   
+    #portfolio h1,
+    #portfolio h2 {
+        font-size: 1.5rem;
+        margin-right: 40px;
+    }
+
+    .skyfall {
+        width: 80%;
+        padding: 20px;
+        margin-right: 150px;
+        margin-top: 20px;
+    }
+
+    .skyfallimages img,
+    .skyfallimages video {
+        width: 90vw;
+        height: 300px;
+    }
+
+    #portfolio h1 {
+        font-size: 2rem;
+    }
 }

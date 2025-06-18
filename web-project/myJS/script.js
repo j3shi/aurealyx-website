@@ -30,9 +30,9 @@ document.getElementById("scrollToAbout").addEventListener("click", () => {
 });
 
 document.getElementById("scrollToContact").addEventListener("click", () => {
-    const aboutSection = document.getElementById("contact");
-    if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: "smooth", block: "center" });
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 });
 
