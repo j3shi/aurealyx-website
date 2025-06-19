@@ -177,6 +177,13 @@ h3 {
     margin: 0 auto;
 }
 
+#information p {
+    color: lightgray;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
 .service {
     display: flex;
     flex-direction: column;
@@ -447,6 +454,10 @@ h3,
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+
+    #aboutHeader {
+        margin-top: 20px;
     }
 
     #about,
