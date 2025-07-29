@@ -85,6 +85,7 @@ function createAuroraWave() {
         auroraContainer.remove();
     }, 30000);
 }
+
 });
 
 gsap.registerEffect({
