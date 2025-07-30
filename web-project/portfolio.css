@@ -29,15 +29,6 @@ header {
     z-index: -1;
 }
 
-#smokeImage {
-    position: absolute;
-    top: 380px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .name {
     position: absolute;
     display: flex;
@@ -48,6 +39,7 @@ header {
     top: 80%;
     left: 150px; /* Adjust as needed */
     gap: 5px;
+    animation: slideInFromLeft 1s ease-out;
 }
 
 .name span {
@@ -80,7 +72,109 @@ header {
     left: 200px; /* Adjust as needed */
     gap: 5px;
     text-shadow: 0 0 5px rgba(255, 255, 255);
+    animation: slideInFromLeft 1s ease-out;
 }
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px) translateY(-50%) rotate(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) translateY(-50%) rotate(-90deg);
+        opacity: 1;
+    }
+}
+
+#texting {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    top: 70%;
+    left: 500px; /* Adjust as needed */
+    gap: 5px;
+    text-shadow: 0 0 5px rgba(255, 255, 255);
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Inter';
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-cursor {
+    0%, 50% {
+        border-right-color: white;
+    }
+    51%, 100% {
+        border-right-color: transparent;
+    }
+}
+
+#carousel {
+    position: absolute;
+    top: 30%;
+    right: 550px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 300px;
+    perspective: 1000px;
+    overflow: visible;
+}
+
+#carousel div {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    transition: all 1s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#carousel div.center {
+    left: 100px;
+    top: 50px;
+    z-index: 3;
+    transform: scale(1.2);
+    filter: blur(0px);
+}
+
+#carousel div.left {
+    left: 20px;
+    top: 75px;
+    z-index: 1;
+    transform: scale(0.8);
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+#carousel div.right {
+    left: 180px;
+    top: 75px;
+    z-index: 1;
+    transform: scale(0.8);
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+#carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 nav ul {
     position: absolute;
