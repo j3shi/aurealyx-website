@@ -32,22 +32,40 @@
         </nav>
         <img src="images/tundravisuals.logo.png" alt="TundraVisuals Logo" class="logo">
         <h1 class="name" id="popHeader">JESSE&nbsp;HIRVONEN</h1>
+        <div class="profile-image">
+        <img src="images/peilikuva.png" alt="peilikuva">
+        <img src="images/omakuva_vari.png" alt="omakuva">
+        <img src="images/outfit-transparent.png" alt="outfit">
+        </div>
         <p class="intro">IT engineering student // Web Developer</p>
 
-        <div id="carousel">
-            <div><img src="images/outfit-transparent.png" alt="outfit"></div>
-            <div><img src="images/omakuva_vari.png" alt="omakuva"></div>
-            <div><img src="images/peilikuva.png" alt="peilikuva"></div>
+        <div class="terminal-window">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="close"></span>
+            <span class="minimize"></span>
+            <span class="maximize"></span>
         </div>
-        <div>
-            <p id="texting">Welcome to my portfolio! I'm Jesse Hirvonen, the founder of Aurealyx. <br>
-              Here you can find some of my recent work and projects. <br>
-              I'm a second year ICT engineering student at OAMK, Finland. <br>
-            </p>
+        <div class="terminal-title">Terminal - you can move this around (try it)</div>
+    </div>
+    <div class="terminal-body">
+        <div class="terminal-line">
+            <span class="prompt">jesse@aurealyx:~$</span>
+            <span class="command" id="terminal-text"></span>
+            <span class="cursor">|</span>
         </div>
+    </div>
+</div>
+
+<div class="portfolio-here">
+    <h5>portfolio here! <br>
+    ↓</h5>
+</div>
+
     </header>
 
     <section id="portfolio">
+        <div id="portfolioElements">
         <h1>Portfolio</h1>
         <h2>Explore recent projects here:</h2>
 
@@ -60,7 +78,7 @@
             </div>
             <p>Skyfall is a stunning website designed for a cozy cottage rental, featuring beautiful visuals and easy booking options.</p>
         </div>
-
+        </div>
     </section>
     <script src="myJS/portfolio.js" defer></script>
 </body>

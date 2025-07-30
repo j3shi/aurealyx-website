@@ -69,7 +69,7 @@ header {
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left center;
     top: 65%;
-    left: 200px; /* Adjust as needed */
+    left: 350px; /* Adjust as needed */
     gap: 5px;
     text-shadow: 0 0 5px rgba(255, 255, 255);
     animation: slideInFromLeft 1s ease-out;
@@ -86,93 +86,132 @@ header {
     }
 }
 
-#texting {
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 10px;
+.profile-image {
     position: absolute;
+    top: 85px;
+    left: 190px;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    animation: slideInImage 1s ease-out;
+}
+
+.profile-image img:hover {
+    filter: grayscale(0%);
+}
+
+.profile-image img {
+    width: auto;
+    height: 200px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    border-radius: 16px;
+}
+
+@keyframes slideInImage {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.terminal-window {
+    position: absolute; /* Changed from relative to absolute */
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', monospace;
+    min-width: 600px;
+    overflow: hidden;
+    cursor: move; /* Show move cursor */
+    z-index: 1000;
+}
+
+.terminal-header {
+    background: rgba(45, 45, 45, 0.3);
+    padding: 10px 15px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(68, 68, 68, 0.5);
+    cursor: grab; /* Grab cursor for header */
+    user-select: none; /* Prevent text selection while dragging */
+}
+
+.terminal-header:active {
+    cursor: grabbing;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close { background: #ff5f57; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #28ca42; }
+
+.terminal-title {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.terminal-body {
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.5);
+    color: #00ff00;
+    min-height: 200px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.terminal-line {
+    margin-bottom: 10px;
+}
+
+.prompt {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.command {
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+.cursor {
+    color: #00ff00;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.portfolio-here {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    top: 70%;
-    left: 500px; /* Adjust as needed */
-    gap: 5px;
-    text-shadow: 0 0 5px rgba(255, 255, 255);
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: 'Inter';
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink-cursor {
-    0%, 50% {
-        border-right-color: white;
-    }
-    51%, 100% {
-        border-right-color: transparent;
-    }
-}
-
-#carousel {
-    position: absolute;
-    top: 30%;
-    right: 550px;
-    transform: translateY(-50%);
-    width: 400px;
-    height: 300px;
-    perspective: 1000px;
-    overflow: visible;
-}
-
-#carousel div {
-    position: absolute;
-    width: 250px;
-    height: auto;
-    transition: all 1s ease-in-out;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-#carousel div.center {
-    left: 100px;
-    top: 50px;
-    z-index: 3;
-    transform: scale(1.2);
-    filter: blur(0px);
-}
-
-#carousel div.left {
-    left: 20px;
-    top: 75px;
-    z-index: 1;
-    transform: scale(0.8);
-    filter: blur(2px);
-    opacity: 0.7;
-}
-
-#carousel div.right {
-    left: 180px;
-    top: 75px;
-    z-index: 1;
-    transform: scale(0.8);
-    filter: blur(2px);
-    opacity: 0.7;
-}
-
-#carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    color: white;
+    font-size: 0.8rem;
 }
 
 

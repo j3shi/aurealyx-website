@@ -431,6 +431,7 @@ h3,
     z-index: 1; /* Make sure these are above the aurora */
 }
 
+
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;

@@ -1,90 +1,141 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const textingElement = document.getElementById("texting");
-    if (textingElement) {
-        const text = textingElement.textContent.trim();
-        const sentences = text.split(/[.]+/).filter(sentence => sentence.trim().length > 0);
-        textingElement.innerHTML = "";
-        
-        let sentenceIndex = 0;
-        let letterIndex = 0;
-        
-        function typeNextLetter() {
-            if (sentenceIndex < sentences.length) {
-                const currentSentence = sentences[sentenceIndex].trim();
-                
-                if (letterIndex < currentSentence.length) {
-                    textingElement.innerHTML += currentSentence[letterIndex];
-                    letterIndex++;
-                    setTimeout(typeNextLetter, 50); 
-                } else {
-                    // Add punctuation and line break after sentence
-                    textingElement.innerHTML += ".<br>";
-                    sentenceIndex++;
-                    letterIndex = 0;
-                    setTimeout(typeNextLetter, 200); // 500ms pause between sentences
-                }
-            }
-        }
-        
-        typeNextLetter();
-    }
     
-    const header= document.getElementById("popHeader");
-    const text = header.textContent.trim();
-    header.innerHTML = "";
+    // PopHeader splitting
+    const header = document.getElementById("popHeader");
+    if (header) {
+        const text = header.textContent.trim();
+        header.innerHTML = "";
 
-    text.split("").forEach((letter) => {
-        let span = document.createElement("span");
-        span.textContent = letter;
-        span.classList.add("popLetter");
-        header.appendChild(span);
-
-        document.getElementById("scrollToPortfolio").addEventListener("click", () => {
-    const portfolioSection = document.getElementById("portfolio");
-    if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: "smooth", block: "center" });
+        text.split("").forEach((letter) => {
+            let span = document.createElement("span");
+            span.textContent = letter;
+            span.classList.add("popLetter");
+            header.appendChild(span);
+        });
     }
-    });
 
-    const carousel = document.getElementById('carousel');
-if (carousel) {
-    const slides = Array.from(carousel.querySelectorAll('div'));
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('center', 'left', 'right');
-            
-            if (index === currentIndex) {
-                slide.classList.add('center');
-            } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
-                slide.classList.add('left');
-            } else if (index === (currentIndex + 1) % slides.length) {
-                slide.classList.add('right');
+    // Scroll to portfolio (moved outside forEach)
+    const scrollToPortfolio = document.getElementById("scrollToPortfolio");
+    if (scrollToPortfolio) {
+        scrollToPortfolio.addEventListener("click", () => {
+            const portfolioSection = document.getElementById("portfolio");
+            if (portfolioSection) {
+                portfolioSection.scrollIntoView({ behavior: "smooth", block: "center" });
             }
         });
     }
 
-    // Initialize carousel
-    updateCarousel();
+    // Terminal typing effect
+    const terminalText = document.getElementById('terminal-text');
+    if (terminalText) {
+        const command = 'init start-portfolio';
+        const welcomeMessage = `$ start-portfolio
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
+> Welcome to my portfolio!
+
+$ show-user
+> Name: Jesse Hirvonen
+> Founder of Aurealyx
+> ICT Engineering Student @ OAMK (2nd year)
+
+$ show-about
+> I enjoy working with technology and creativity.
+> I build digital projects that mix coding, design, and media.
+> Scroll down to see some of the things I've made.
+
+$ list-projects
+> web-design/ software-development/  other/`;
+        
+        let charIndex = 0;
+        let isTypingCommand = true;
+        
+        function typeTerminal() {
+            if (isTypingCommand) {
+                // Type the command
+                if (charIndex < command.length) {
+                    terminalText.textContent += command[charIndex];
+                    charIndex++;
+                    setTimeout(typeTerminal, 50);
+                } else {
+                    // Command finished, add new line and start welcome message
+                    setTimeout(() => {
+                        // Add the welcome message below the command
+                        const terminalBody = document.querySelector('.terminal-body');
+                        const newLine = document.createElement('div');
+                        newLine.className = 'terminal-output';
+                        newLine.style.color = '#00ff00';
+                        newLine.style.marginTop = '10px';
+                        newLine.style.whiteSpace = 'pre-line';
+                        terminalBody.appendChild(newLine);
+                        
+                        // Start typing welcome message
+                        isTypingCommand = false;
+                        charIndex = 0;
+                        typeWelcomeMessage(newLine);
+                    }, 100);
+                }
+            }
+        }
+        
+        function typeWelcomeMessage(element) {
+            if (charIndex < welcomeMessage.length) {
+                element.textContent += welcomeMessage[charIndex];
+                charIndex++;
+                setTimeout(() => typeWelcomeMessage(element), 30);
+            }
+        }
+        
+        setTimeout(typeTerminal, 1000);
     }
 
-    // Auto-advance every 3 seconds
-    setInterval(nextSlide, 3000);
-}
-});
+    // Back button (moved inside DOMContentLoaded)
+    const backButton = document.querySelector('button');
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            location.href = 'index.html';
+        });
+    }
 
-
-const backButton = document.querySelector('button');
-if (backButton) {
-    backButton.addEventListener('click', () => {
-        location.href = 'index.html';
-    })
-}
+    // Make terminal draggable
+    const terminal = document.querySelector('.terminal-window');
+    const terminalHeader = document.querySelector('.terminal-header');
+    
+    if (terminal && terminalHeader) {
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+        
+        terminalHeader.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            
+            const rect = terminal.getBoundingClientRect();
+            initialX = rect.left;
+            initialY = rect.top;
+            
+            terminal.style.transform = 'none';
+            terminal.style.left = initialX + 'px';
+            terminal.style.top = initialY + 'px';
+            
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        });
+        
+        function handleMouseMove(e) {
+            if (!isDragging) return;
+            
+            const deltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+            
+            terminal.style.left = (initialX + deltaX) + 'px';
+            terminal.style.top = (initialY + deltaY) + 'px';
+        }
+        
+        function handleMouseUp() {
+            isDragging = false;
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        }
+    }
 });
 
