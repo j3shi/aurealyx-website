@@ -62,24 +62,50 @@
     ↓</h5>
 </div>
 
-    </header>
+</header>
 
-    <h1 id="portfolio-header">Portfolio</h1>
+<section id="portfolio">
+<h1 id="portfolio-header">//PORTFOLIO//</h1>
 
-    <section id="portfolio">
-        <div id="portfolioElements">
+    <div class="project-grid">
+  <div class="project-card" data-project="1" style="background-image: url('images/skyfall_hero.png');">
+    <div class="project-overlay">
+      <h3>skyfall1.fi</h3>
+      <p>Skyfall – Cottage Rental Website</p>
+    </div>
+  </div>
+  <div class="project-card" data-project="2" style="background-image: url('images/kstevents-hero.png');">
+    <div class="project-overlay">
+      <h3>kstevents.fi</h3>
+      <p>KST Events – Event Security Services Website</p>
+    </div>
+  </div>
+  <div class="project-card" data-project="3" style="background-image: url('images/bankautomat-project.png')">
+    <div class="project-overlay">
+      <h3>Bank Automat</h3>
+      <p>Bank Automat School Project</p>
+    </div>
+  </div>
+  <!-- Add more .project-card elements for other projects -->
+</div>
 
-        <div class="skyfall">
-            <h3>Project 1: Cottage Rental Website</h3>
-            <div class="skyfallimages">
-            <img src="images/skyfall_hero.png" alt="skyfall hero image">
-            <img src="images/skyfall_2.png" alt="skyfall image 2">
-            <video src="images/skyfall_video.mp4" loop autoplay muted playsinline></video>
-            </div>
-            <p>Skyfall is a stunning website designed for a cozy cottage rental, featuring beautiful visuals and easy booking options.</p>
-        </div>
-        </div>
-    </section>
+<!-- Popup Modal -->
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3 id="modal-title"></h3>
+    <div id="modal-carousel">
+      <!-- Images will be injected here -->
+    </div>
+    <div id="modal-languages">
+      <!-- Coding languages will be injected here -->
+    </div>
+    <p id="modal-info"></p>
+    <div id="modal-link"></div>
+  </div>
+</div>
+</section>
+
     <script src="myJS/portfolio.js" defer></script>
 </body>
 </html>

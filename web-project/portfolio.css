@@ -302,20 +302,6 @@ nav ul li a:active {
   transition: 100ms;
 }
 
-#portfolio {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-#portfolio-header{
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'Inter';
-}
-
 .skyfallimages {
     display: flex;
     flex-direction: row;
@@ -369,7 +355,140 @@ nav ul li a:active {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
+#portfolio {
+    min-height: 100vh;
+}
 
+#portfolio-header{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    margin-left: 50px;
+    font-family: 'Inter';
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.project-card {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  width: 100%;
+  padding: 16px;
+  border-radius: 0 0 16px 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #222;
+  color: white;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px; right: 24px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#modal-carousel img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Carousel button styles */
+.carousel-btn {
+  background: rgba(30,30,30,0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: #fff;
+  color: #222;
+  transform: scale(1.1) translateY(-50%);
+}
+
+#carousel-prev {
+  left: 10px;
+}
+
+#carousel-next {
+  right: 10px;
+}
+
+.visit-site-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: #fff;
+  color: #222;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.visit-site-btn:hover {
+  background: #222;
+  color: #fff;
+}
 
 @media (max-width: 768px) {
    

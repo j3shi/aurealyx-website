@@ -151,5 +151,123 @@ $ show-skills
             document.removeEventListener('mouseup', handleMouseUp);
         }
     }
+
+    const projects = [
+      {
+        id: 1,
+        title: "Cottage Rental Website",
+        info: "Skyfall is an elegant and immersive website designed to showcase a cozy cottage getaway. Inspired by the serene beauty of Finnish Lapland and the cinematic charm of Skyfall, the site combines stunning imagery with a warm, inviting design. Visitors can explore high-quality photos of the cottage and its surroundings, discover local attractions, and easily check availability. The booking process is intuitive and straightforward, ensuring a smooth user experience from browsing to reservation. Skyfall supports both Finnish and English, making it accessible to a wide range of guests.",
+        languages: ["HTML", "CSS", "JavaScript"],
+        icons: [
+          { src: "images/html-5.png", alt: "HTML" },
+          { src: "images/css-3.png", alt: "CSS" },
+          { src: "images/js.png", alt: "JavaScript" }
+        ],
+        images: [
+          "images/skyfall_hero.png",
+          "images/skyfall_2.png",
+          "images/skyfall_video.mp4" // You can handle video separately if needed
+        ],
+        link: "https://skyfall1.fi"
+      },
+      {
+        id: 2,
+        title: "KST Events",
+        info: "KST Events is a sleek, informative website dedicated to showcasing the company’s professional event security services. Built with a clean and modern design, the site highlights KST Events’ expertise in ensuring safety and order at concerts, festivals, corporate gatherings, and private functions. Visitors can learn about available security solutions, explore past projects, and easily request a quote or contact the team. With responsive design for seamless mobile and desktop use, KST Events delivers a trustworthy, accessible, and professional online presence that reflects the company’s commitment to reliable event safety.",
+        languages: ["HTML", "CSS", "JavaScript"],
+        icons: [
+          { src: "images/html-5.png", alt: "HTML" },
+          { src: "images/css-3.png", alt: "CSS" },
+          { src: "images/js.png", alt: "JavaScript" }
+        ],
+        images: [
+          "images/kstevents-hero.png",
+          "images/kstevents-info.png",
+          "images/kstevents-rekry.png",
+          "images/kstevents-yhteystiedot.png"
+        ],
+        link: "https://kstevents.fi"
+      },
+      {
+        id: 3,
+        title: "Bank Automat Project",
+        info: "A full-stack banking application simulating a modern ATM. The backend includes routers and models with complete CRUD operations for secure data handling. The Qt-based frontend features a login system with PIN authentication, credit/debit account selection, a virtual keyboard, inactivity timeout, cash withdrawal options, real-time credit limit updates, and transaction history display. Designed with a polished UI for a seamless and secure user experience.",
+        languages: ["QT", "SQL", "JavaScript"],
+        icons: [
+          { src: "images/qt.png", alt: "QT" },
+          { src: "images/sql-server.png", alt: "SQL" },
+          { src: "images/js.png", alt: "JavaScript" }
+        ],
+        images: [
+            "images/bankautomat-project.png",
+            "images/bankautomat-saldo.png",
+        ]
+      }
+      // Add more project objects here
+    ];
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const projectId = parseInt(card.getAttribute('data-project'));
+        const project = projects.find(p => p.id === projectId);
+        if (!project) return;
+
+        document.getElementById('modal-title').textContent = project.title;
+        document.getElementById('modal-info').textContent = project.info;
+        document.getElementById('modal-languages').innerHTML =
+          project.icons.map(icon =>
+            `<img src="${icon.src}" alt="${icon.alt}" style="height:32px;vertical-align:middle;margin-right:8px;">`
+          ).join('');
+
+        // New line for the project link
+        document.getElementById('modal-link').innerHTML = project.link
+          ? `<a href="${project.link}" target="_blank" class="visit-site-btn">Visit</a>`
+          : "";
+
+        currentProjectImages = project.images;
+        currentImageIndex = 0;
+        showCarouselImage(currentImageIndex);
+
+        document.getElementById('project-modal').style.display = 'flex';
+      });
+    });
+
+    // Close when clicking the close button
+    document.querySelector('.close-btn').onclick = function() {
+      document.getElementById('project-modal').style.display = 'none';
+    };
+
+    // Close when clicking outside modal-content
+    document.getElementById('project-modal').onclick = function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    };
+
+    let currentImageIndex = 0;
+    let currentProjectImages = [];
+
+    function showCarouselImage(index) {
+      const img = currentProjectImages[index];
+      let html = "";
+      if (img.endsWith('.mp4')) {
+        html = `<video src="${img}" controls style="width:100%;border-radius:8px;"></video>`;
+      } else {
+        html = `<img src="${img}" alt="Project image" style="width:100%;border-radius:8px;">`;
+      }
+      document.getElementById('modal-carousel').innerHTML = `
+        <button id="carousel-prev" class="carousel-btn">&#8592;</button>
+        <div style="position:relative;">${html}</div>
+        <button id="carousel-next" class="carousel-btn">&#8594;</button>
+      `;
+      document.getElementById('carousel-prev').onclick = () => {
+        currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+        showCarouselImage(currentImageIndex);
+      };
+      document.getElementById('carousel-next').onclick = () => {
+        currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+        showCarouselImage(currentImageIndex);
+      };
+    }
 });
 
