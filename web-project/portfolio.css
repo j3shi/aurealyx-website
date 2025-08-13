@@ -121,8 +121,8 @@ header {
 
 .terminal-window {
     position: absolute; /* Changed from relative to absolute */
-    top: 80px;
-    left: 50%;
+    top: 30px;
+    left: 47%;
     transform: translateX(-50%);
     background: rgba(30, 30, 30, 0.1);
     border-radius: 8px;
@@ -176,7 +176,7 @@ header {
     background: rgba(30, 30, 30, 0.5);
     color: #00ff00;
     min-height: 200px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 }
 
@@ -303,20 +303,17 @@ nav ul li a:active {
 }
 
 #portfolio {
-    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 20px;
-    color: white;
 }
 
-#portfolio h1 {
+#portfolio-header{
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: white;
+    font-family: 'Inter';
 }
 
 .skyfallimages {

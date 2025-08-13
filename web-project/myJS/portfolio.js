@@ -34,17 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
 > Welcome to my portfolio!
 
 $ show-user
-> Name: Jesse Hirvonen
-> Founder of Aurealyx
-> ICT Engineering Student @ OAMK (2nd year)
+> Jesse Hirvonen [Founder of Aurealyx]
 
 $ show-about
 > I enjoy working with technology and creativity.
 > I build digital projects that mix coding, design, and media.
-> Scroll down to see some of the things I've made.
 
-$ list-projects
-> web-design/ software-development/  other/`;
+$ show-education
+📘 Education Timeline:
+├── 2023 - Present : ICT Engineering @ Oulu University of Applied Sciences
+└── 2023    : Matriculation Examination, Jyväskylän Normaalikoulu
+
+$ show-skills
+💻 Coding & Tools:
+├── Languages: 
+│   ├─ 🟦 C / C++ 
+│   ├─ ☕ Java 
+│   └─ 🌐 HTML / CSS / JS 
+├── Tools & Platforms:
+│   ├─ 🐧 Linux / Ubuntu 
+│   ├─ 🐙 GitHub / Git 
+│   ├─ 🗃️ MySQL Workbench 
+│   └─ ☁️ Cloud Platforms
+└── Creative:
+    ├─ 🎬 Video Editing
+    └─ 📷 Photography & Visual Design`;
         
         let charIndex = 0;
         let isTypingCommand = true;
