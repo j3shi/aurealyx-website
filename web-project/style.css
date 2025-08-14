@@ -310,7 +310,6 @@ footer {
 
 .button:active {
   letter-spacing: 3px;
-  background-color: rgb(142, 5, 5);
   color: hsl(0, 0%, 100%);
   box-shadow: white;
   transform: translateY(10px);

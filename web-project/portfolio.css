@@ -69,7 +69,7 @@ header {
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left center;
     top: 65%;
-    left: 350px; /* Adjust as needed */
+    left: 200px; /* Adjust as needed */
     gap: 5px;
     text-shadow: 0 0 5px rgba(255, 255, 255);
     animation: slideInFromLeft 1s ease-out;
@@ -86,43 +86,11 @@ header {
     }
 }
 
-.profile-image {
-    position: absolute;
-    top: 85px;
-    left: 190px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    animation: slideInImage 1s ease-out;
-}
-
-.profile-image img:hover {
-    filter: grayscale(0%);
-}
-
-.profile-image img {
-    width: auto;
-    height: 200px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-    border-radius: 16px;
-}
-
-@keyframes slideInImage {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
 .terminal-window {
     position: absolute; /* Changed from relative to absolute */
     top: 30px;
-    left: 47%;
+    left: 40%;
     transform: translateX(-50%);
     background: rgba(30, 30, 30, 0.1);
     border-radius: 8px;
@@ -132,6 +100,24 @@ header {
     overflow: hidden;
     cursor: move; /* Show move cursor */
     z-index: 1000;
+}
+
+.terminal-window-small {
+  position: absolute;
+  width: 300px;
+  z-index: 5000;
+  font-family: 'Courier New', monospace;
+  background: rgba(30, 30, 30, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  top: 170px;
+  right: 150px;
+}
+
+.terminal-window-small img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
 }
 
 .terminal-header {
@@ -228,13 +214,13 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
     transition: color 0.3s;
     border: 1px solid white;
     border-radius: 24px;
@@ -279,7 +265,7 @@ nav ul li a:active {
   color: white;
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
-  font-size: 15px;
+  font-size: 12px;
   transition: all 0.5s ease;
   position: absolute;
   top: 20px;

@@ -42,8 +42,9 @@ $ show-about
 
 $ show-education
 📘 Education Timeline:
-├── 2023 - Present : ICT Engineering @ Oulu University of Applied Sciences
-└── 2023    : Matriculation Examination, Jyväskylän Normaalikoulu
+├── 2023    : Matriculation Examination, Jyväskylän Normaalikoulu
+├── 2023 - 2024: Army Service, Finnish Defence Forces (Military Vehicle Driver (C) & Mechanic)
+└── 2024 - Present : ICT Engineering @ Oulu University of Applied Sciences
 
 $ show-skills
 💻 Coding & Tools:
@@ -69,7 +70,7 @@ $ show-skills
                 if (charIndex < command.length) {
                     terminalText.textContent += command[charIndex];
                     charIndex++;
-                    setTimeout(typeTerminal, 50);
+                    setTimeout(typeTerminal, 30);
                 } else {
                     // Command finished, add new line and start welcome message
                     setTimeout(() => {
@@ -96,6 +97,9 @@ $ show-skills
                 element.textContent += welcomeMessage[charIndex];
                 charIndex++;
                 setTimeout(() => typeWelcomeMessage(element), 30);
+            } else {
+                // Show the second terminal after typing finishes
+                document.getElementById('terminal-window-small').style.display = 'block';
             }
         }
         
@@ -150,6 +154,37 @@ $ show-skills
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseup', handleMouseUp);
         }
+    }
+
+    const smallTerminal = document.getElementById('terminal-window-small');
+    const smallTerminalHeader = smallTerminal ? smallTerminal.querySelector('.terminal-header') : null;
+
+    if (smallTerminal && smallTerminalHeader) {
+        let isDragging = false, offsetX = 0, offsetY = 0;
+
+        smallTerminalHeader.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - smallTerminal.offsetLeft;
+            offsetY = e.clientY - smallTerminal.offsetTop;
+            document.body.style.userSelect = 'none';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                smallTerminal.style.left = (e.clientX - offsetX) + 'px';
+                smallTerminal.style.top = (e.clientY - offsetY) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            document.body.style.userSelect = '';
+        });
+    }
+
+    // Show both terminals immediately
+    if (smallTerminal) {
+        smallTerminal.style.display = 'block';
     }
 
     const projects = [
