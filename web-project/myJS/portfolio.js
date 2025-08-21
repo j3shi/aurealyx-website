@@ -70,7 +70,7 @@ $ show-skills
                 if (charIndex < command.length) {
                     terminalText.textContent += command[charIndex];
                     charIndex++;
-                    setTimeout(typeTerminal, 30);
+                    setTimeout(typeTerminal, 50);
                 } else {
                     // Command finished, add new line and start welcome message
                     setTimeout(() => {
@@ -87,7 +87,7 @@ $ show-skills
                         isTypingCommand = false;
                         charIndex = 0;
                         typeWelcomeMessage(newLine);
-                    }, 100);
+                    }, 50);
                 }
             }
         }
@@ -96,7 +96,7 @@ $ show-skills
             if (charIndex < welcomeMessage.length) {
                 element.textContent += welcomeMessage[charIndex];
                 charIndex++;
-                setTimeout(() => typeWelcomeMessage(element), 30);
+                setTimeout(() => typeWelcomeMessage(element), 5);
             } else {
                 // Show the second terminal after typing finishes
                 document.getElementById('terminal-window-small').style.display = 'block';
@@ -303,6 +303,26 @@ $ show-skills
         currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
         showCarouselImage(currentImageIndex);
       };
+    }
+
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    if (burgerBtn && mobileNav) {
+      burgerBtn.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Optional: close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (
+          mobileNav.style.display === 'block' &&
+          !mobileNav.contains(e.target) &&
+          !burgerBtn.contains(e.target)
+        ) {
+          mobileNav.style.display = 'none';
+        }
+      });
     }
 });
 

@@ -42,6 +42,19 @@ header {
     animation: slideInFromLeft 1s ease-out;
 }
 
+.otsikko {
+    position: absolute;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    top: 80%;
+    left: 150px; /* Adjust as needed */
+    font-family: 'Inter';
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255);
+    font-size: 4rem;
+}
+
 .name span {
     display: inline-block;
     font-size: 4rem;
@@ -88,21 +101,23 @@ header {
 
 
 .terminal-window {
-    position: absolute; /* Changed from relative to absolute */
+    position: absolute;
     top: 30px;
-    left: 40%;
-    transform: translateX(-50%);
+    left: 300px;
     background: rgba(30, 30, 30, 0.1);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     font-family: 'Courier New', monospace;
+    max-width: 90vw;
+    max-height: 90vh;
     min-width: 600px;
-    overflow: hidden;
-    cursor: move; /* Show move cursor */
+    overflow: auto;
+    cursor: move;
     z-index: 1000;
 }
 
 .terminal-window-small {
+  display: block;
   position: absolute;
   width: 300px;
   z-index: 5000;
@@ -118,6 +133,7 @@ header {
     width: 200px;
     height: auto;
     border-radius: 8px;
+    filter: grayscale(100%);
 }
 
 .terminal-header {
@@ -288,59 +304,6 @@ nav ul li a:active {
   transition: 100ms;
 }
 
-.skyfallimages {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    scrollbar-width: thin;  /* Firefox */
-    scrollbar-color: #111 #222;
-}
-
-/* Chrome, Safari, Edge and Opera */
-.skyfallimages::-webkit-scrollbar {
-    height: 10px;
-    background: #222;
-}
-
-.skyfallimages::-webkit-scrollbar-thumb {
-    background: #111;
-    border-radius: 8px;
-}
-
-.skyfallimages::-webkit-scrollbar-track {
-    background: #222;
-    border-radius: 8px;
-}
-
-
-.skyfallimages img,
-.skyfallimages video {
-    width: 600px;
-    max-width: 90vw;
-    height: 400px;
-    border-radius: 10px;
-    object-fit: cover;
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    background: #111;
-}
-
-.skyfall{
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    background: transparent;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
 #portfolio {
     min-height: 100vh;
 }
@@ -476,38 +439,226 @@ nav ul li a:active {
   color: #fff;
 }
 
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 200000;
+}
+
+.burger-btn span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 1);
+  z-index: 19999;
+  padding-top: 100px;
+}
+
+.mobile-nav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 24px 0;
+  text-align: left;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.3);
+}
+
+.mobile-nav a {
+  color: #fff;
+  font-size: 3rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Inter';
+  padding: 12px 24px;
+  display: block;
+  border-radius: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+  z-index: 29999;
+}
+
+.mobile-nav a:hover {
+  background: #222;
+}
+
+@media (max-width: 1400px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    #portfolio-header {
+        font-size: 2rem;
+        margin-left: 20px;
+    }
+
+    .project-card {
+        width: 250px;
+        height: 150px;
+    }
+
+    .project-overlay {
+        padding: 12px;
+    }
+
+    .terminal-body {
+        font-size: 10px;
+    }
+
+    .terminal-window-small {
+        right: 100px;
+    }
+
+    .terminal-window {
+        max-width: 300px;
+        left: 250px;
+    }
+    
+
+}
+
+@media (max-width: 1200px) {
+
+    .otsikko {
+      display: block;
+      transform: rotate(0deg);
+      top: 30px;
+      left: 60px;
+      animation: none;
+    }
+    .name {
+      display: none;
+    }
+    .intro {
+      transform:rotate(0deg);
+      top: 135px;
+      left: 100px;
+      animation: none;
+    }
+    .terminal-window-small {
+        right: 150px;
+        top: 300px;
+    }
+    .terminal-window {
+        top: 200px;
+        left: 60px;
+    }
+    nav ul {
+    display: none;
+    }
+    .button {
+    display: none;
+    }
+    .burger-btn {
+    display: flex;
+    flex-direction: column;
+    } 
+    .logo {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        right: auto;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+
+
+  .terminal-window {
+    left: 50px;
+  }
+
+  .terminal-window-small {
+    right: 50px;
+    top: 250px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .terminal-window-small img {
+    width: 150px;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
    
     html, body {
         overflow-x: hidden;
     }
 
-    header {
-        height: 100vh;
-        min-height: 300px;
-        padding: 10px;
+    .otsikko {
+      top: 30px;
+      left: 40px;
     }
-   
-    #portfolio h1,
-    #portfolio h2 {
-        font-size: 1.5rem;
-        margin-right: 40px;
+    .intro {
+      top: 140px;
+      left: 100px;
     }
 
-    .skyfall {
-        width: 80%;
-        padding: 20px;
-        margin-right: 150px;
-        margin-top: 20px;
+    .terminal-window {
+      left: 20px;
+      min-width: unset;
+      max-width: 90vw;
     }
 
-    .skyfallimages img,
-    .skyfallimages video {
-        width: 90vw;
-        height: 300px;
+    .terminal-window-small {
+      display: none !important;
     }
 
-    #portfolio h1 {
-        font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+
+   html, body {
+        overflow-x: hidden;
     }
+
+    .otsikko {
+      top: 40px;
+      left: 50px;
+      font-size: 2.5rem;
+    }
+    .intro {
+      top: 110px;
+      left: 80px;
+      font-size: 0.7rem;
+    }
+
+    .terminal-window {
+      left: 20px;
+      top: 160px;
+      min-width: unset;
+      max-width: 90vw;
+    }
+    .logo {
+      width: 60px;
+      height: auto;
+    }
+
 }
