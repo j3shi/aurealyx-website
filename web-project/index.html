@@ -1,126 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R445C5020X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-R445C5020X');
-  </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurealyx - Web Design & Development</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/aurealyx_selain.png">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-    <script src="myJS/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurealyx — Web Development Studio</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="images/aurealyx_logo.svg">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="logo"><img src="images/aurealyx_logo.svg" alt="Aurealyx" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="#about">Studio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">Get in touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-        <section id="hero">
-        <img src="images/tundravisuals.logo.png" alt="TundraVisuals Logo" class="logo">
-        <h1 id="popHeader">AUREALYX</h1>
-        <nav class="links">
-            <ul>
-                <li><a href="#" id="scrollToServices">Services</a></li>
-                <li><a href="#" id="scrollToAbout">About</a></li>
-                <li><a href="#" id="scrollToContact">Contact</a></li>
-            </ul>
-        </nav>
-        </section>
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+  <nav class="mobile-nav-menu">
+    <a href="#about"    class="mobile-nav-link">Studio</a>
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#work"     class="mobile-nav-link">Work</a>
+    <a href="#contact"  class="mobile-nav-link mobile-nav-cta">Get in touch</a>
+  </nav>
+</div>
 
-        <h2 class="headline">Crafting Websites & Socials That Shine</h2>
-        <p class="subheadline">At Aurealyx, we help you stand out online with stunning websites and social media magic — all done with heart.</p>
-        <p></p>
-        <button class="button" onclick="location.href='portfolio.html'">Check out the portfolio!</button>
-    </header>
-
-
- <section id="information">
-    <h2>Services</h2>
-    <section id="services">
-        <div class="service">
-            <h3>Web Design *</h3>
-            <p>We create beautiful, user-friendly websites that reflect your brand and engage your audience.</p>
-            <img src="images/world-wide-web.png" alt="worldwideweb" id="worldwideweb">
-        </div>
-        <div class="service">
-            <h3>Social Media Management *</h3>
-            <p>Let us handle your social media presence with creative content and strategic planning to grow your online community.</p>
-            <img src="images/social-media.png" alt="socialmedia" id="socialmedia">
-        </div>
-    </section>
-    <p id="pricing"> * Prices vary based on project scope and requirements. Contact us for a personalized quote. <br>(Website prices start at 300€)</p>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="stars"></div>
+    <div class="aurora"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <p class="hero-eyebrow">// Web Development Studio</p>
+  <h1 class="hero-title">
+    Crafted from the North.<br>
+    <span class="line2">Built for the World.</span>
+  </h1>
+  <p class="hero-sub">
+    Aurealyx builds high-performance, beautifully designed websites that turn visitors into customers — with Nordic clarity and modern precision.
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary">Start a project</a>
+    <a href="https://jessehirvonen.vercel.app" target="_blank" rel="noopener" class="btn-ghost">View portfolio</a>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span class="scroll-line"></span>
+  </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Web Design</span><span class="dot">◆</span>
+    <span>UI / UX</span><span class="dot">◆</span>
+    <span>E-Commerce</span><span class="dot">◆</span>
+    <span>CMS Integration</span><span class="dot">◆</span>
+    <span>Performance Optimization</span><span class="dot">◆</span>
+    <span>Responsive Layouts</span><span class="dot">◆</span>
+    <span>SEO Foundation</span><span class="dot">◆</span>
+    <span>Custom Development</span><span class="dot">◆</span>
+    <span>Web Design</span><span class="dot">◆</span>
+    <span>UI / UX</span><span class="dot">◆</span>
+    <span>E-Commerce</span><span class="dot">◆</span>
+    <span>CMS Integration</span><span class="dot">◆</span>
+    <span>Performance Optimization</span><span class="dot">◆</span>
+    <span>Responsive Layouts</span><span class="dot">◆</span>
+    <span>SEO Foundation</span><span class="dot">◆</span>
+    <span>Custom Development</span><span class="dot">◆</span>
+  </div>
+</div>
 
-<section id="information">
-  <h2 id="aboutHeader">About Aurealyx</h2>
-  <section id="information-about">
-    <section id="about">
-    <p>
-      <strong>Aurealyx</strong> is a small, independent business led by a passionate IT engineering student. Aurealyx helps businesses stand out online with beautiful websites and smart social media. Whether you’re starting out or ready to grow, we make sure your online presence matches your brand clearly and professionally.<br><br>
-
-<strong>Running a business is hard,</strong> so we make the web part easy. From building eye-catching websites to managing social media, we’ve got you covered so you can focus on what you do best.<br><br>
-
-<strong>Why choose us?</strong> We don’t just make things look good — we make sure they work. Every website tells your story, connects with your audience, and helps your business grow.<br><br>
-
-<strong>Aurealyx exists for one reason:</strong> your online presence should work for you.<br><br>Let’s build something great together.</p>
-    </section>
-  
-
-    <section id="timeline">
-    <p>Here's a brief timeline of our milestones:</p>
-    <ul>
-      <li><strong>2024:</strong> The journey began with a mission to empower businesses online.</li>
-      <li><strong>2025:</strong> Officially launched aurealyx and got to work on our first project. <br>(more about our projects in <a href="portfolio.html"> the portfolio</a>)</li>
-      <li><strong>????:</strong> Let's see what the future has for us.</li>
-    </ul>
-    </section>
-  </section>
-</section>
-
-
-<section id="information">
-<h2 id="contactHeader">Contact Form</h2>
-    <section id="contact">
-     <div class="form-container">
-      <form class="form" action="https://formspree.io/f/manjojkg" method="POST">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="textarea">How Can We Help You?</label>
-          <textarea name="message" id="textarea" rows="10" cols="50" required></textarea>
-        </div>
-        <button class="form-submit-btn" type="submit">Submit</button>
-      </form>
-     </div>
-     <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p>Jesse Hirvonen - Founder: <a href="mailto:jessehirvonen17@gmail.com">jessehirvonen17@gmail.com</a></p>
-        <p>Follow Aurealyx on social media for updates:</p>
-        <a href="https://www.instagram.com/aurealyx/">
-          <br>
-          <img src="images/instagram.png" alt="Instagram Logo" class="social-logo" style="width: 50px; height: 50px; vertical-align: middle;">
-        </a>
+<!-- STUDIO / ABOUT -->
+<section id="about">
+  <div class="max-w">
+    <div class="about-header">
+      <p class="section-label" data-reveal>// Studio</p>
+      <h2 class="section-title" data-reveal data-delay="1">One person.<br>Full attention.</h2>
+      <p class="section-sub" data-reveal data-delay="2">Aurealyx is Jesse Hirvonen — an IT engineering student based in Finland. No account managers, no layers, no templates. Just focused work on your project from start to launch.</p>
     </div>
 
-    </section>
+    <div class="timeline-h" id="studio-timeline">
+      <div class="tl-line-bg"></div>
+      <div class="tl-line-fill"></div>
+      <div class="tl-cols">
+
+        <div class="tl-col">
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-year">2024</div>
+          <div class="tl-text">
+            <h4>Founded</h4>
+            <p>Aurealyx started with a conviction: web development should serve business goals, not just look good in a portfolio.</p>
+          </div>
+        </div>
+
+        <div class="tl-col">
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-year">2025</div>
+          <div class="tl-text">
+            <h4>Official launch</h4>
+            <p>First client projects delivered. A growing track record and a clear focus on quality over volume.</p>
+          </div>
+        </div>
+
+        <div class="tl-col">
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+            <div class="tl-ring"></div>
+          </div>
+          <div class="tl-year">2026</div>
+          <div class="tl-text">
+            <h4>Growing strong</h4>
+            <p>A steady stream of clients across industries. From cottage rentals to event companies — the reputation is doing the talking.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>
 
-    <footer class="footer">
-        <p>&copy; 2025 Aurealyx. All rights reserved</p>
-    </footer>
+<!-- SERVICES -->
+<section id="services">
+  <div class="max-w">
+    <div class="services-header">
+      <p class="section-label">// Services</p>
+      <h2 class="section-title">What I build<br>for you.</h2>
+      <p class="section-sub">No templates, no shortcuts — only purposeful, handcrafted digital experiences built around what your business actually needs.</p>
+    </div>
+    <div class="services-grid">
 
+      <div class="service-card">
+        <p class="service-num">01</p>
+        <h3>Websites & Landing Pages</h3>
+        <p>From single-page showcases to full multi-section corporate sites. Fast, responsive, and conversion-focused from the first pixel.</p>
+      </div>
+
+      <div class="service-card">
+        <p class="service-num">02</p>
+        <h3>E-Commerce Stores</h3>
+        <p>Shopify, WooCommerce, or custom-built storefronts. Optimised checkout flows and product pages that sell.</p>
+      </div>
+
+      <div class="service-card">
+        <p class="service-num">03</p>
+        <h3>Web Applications</h3>
+        <p>Interactive dashboards, booking systems, and custom tools built with modern frameworks and clean architecture.</p>
+      </div>
+
+      <div class="service-card">
+        <p class="service-num">04</p>
+        <h3>CMS & Blog Setup</h3>
+        <p>WordPress, Sanity, Contentful — you write the content, I build the machine that delivers it beautifully.</p>
+      </div>
+
+      <div class="service-card">
+        <p class="service-num">05</p>
+        <h3>Redesign & Refresh</h3>
+        <p>Your existing site looking dated? I'll modernise the design, improve performance, and maintain your brand identity.</p>
+      </div>
+
+      <div class="service-card">
+        <p class="service-num">06</p>
+        <h3>Maintenance & Support</h3>
+        <p>Monthly retainers for updates, security patches, content changes, and ongoing improvements.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="max-w">
+    <div class="process-content">
+      <div>
+        <h2 class="section-title">From idea<br>to live site.</h2>
+        <p class="section-sub" style="margin-bottom:0">Clear steps. No surprises. Delivery you can count on.</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Discovery Call</h4>
+              <p>We talk about your goals, your audience, and what success looks like. I ask the right questions so nothing gets missed.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Scope & Proposal</h4>
+              <p>You receive a clear written proposal — deliverables, timeline, and fixed price. No billing surprises.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Design & Build</h4>
+              <p>I design in the browser with regular check-ins. You see progress as it happens, not at the very end.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Review & Revise</h4>
+              <p>Two rounds of revisions included. We refine until everything feels right — down to the last detail.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h4>Launch</h4>
+              <p>Domain, hosting, SSL — I handle the deployment. Your site goes live smooth and on schedule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="process-visual">
+        <div class="mockup-browser">
+          <div class="browser-bar">
+            <div class="dot-red"></div>
+            <div class="dot-yellow"></div>
+            <div class="dot-green"></div>
+            <div class="browser-url">yoursite.com</div>
+          </div>
+          <div class="browser-content">
+            <div class="mock-hero-bar"></div>
+            <div class="mock-sub-bar w80"></div>
+            <div class="mock-sub-bar w60"></div>
+            <div class="mock-img"></div>
+            <div class="mock-cards">
+              <div class="mock-card">
+                <div class="mock-card-line accent"></div>
+                <div class="mock-card-line"></div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-line accent"></div>
+                <div class="mock-card-line"></div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-line accent"></div>
+                <div class="mock-card-line"></div>
+              </div>
+            </div>
+            <div style="margin-top:1.2rem; display:flex; gap:0.6rem;">
+              <div style="background:rgba(168,85,247,0.25); width:80px; height:28px; border-radius:2px;"></div>
+              <div style="background:var(--border); width:80px; height:28px; border-radius:2px;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1rem; padding:1.2rem; border:1px solid var(--border); border-radius:2px; background:var(--surface);">
+          <p style="font-family:var(--mono); font-size:0.68rem; color:var(--gold); letter-spacing:0.12em; margin-bottom:0.5rem;">LIGHTHOUSE SCORE</p>
+          <div style="display:flex; gap:1.5rem;">
+            <div style="text-align:center;">
+              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">98</div>
+              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Performance</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">100</div>
+              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Accessibility</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">100</div>
+              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Best Practices</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">96</div>
+              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">SEO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="max-w">
+    <div class="work-header">
+      <p class="section-label">// Portfolio</p>
+      <h2 class="section-title">See the work.</h2>
+      <p class="section-sub">Real clients, real results — browse the full portfolio across industries and project types.</p>
+    </div>
+    <div style="margin-top:2.5rem;">
+      <a href="https://jessehirvonen.vercel.app" target="_blank" rel="noopener" class="btn-primary">View portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="max-w">
+    <div class="contact-wrap">
+      <div>
+        <p class="section-label">// Contact</p>
+        <h2 class="section-title">Ready to build<br>something great?</h2>
+        <p class="section-sub" style="margin-bottom:2.5rem;">Tell me about your project and I'll get back to you within one business day.</p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="project">Project type</label>
+            <select id="project" name="project">
+              <option value="" disabled selected>Select a service</option>
+              <option>Website / Landing Page</option>
+              <option>E-Commerce Store</option>
+              <option>Web Application</option>
+              <option>Redesign</option>
+              <option>Maintenance & Support</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and budget..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="align-self:flex-start;" id="submit-btn">Send message →</button>
+          <p id="form-success" style="display:none;color:#27c93f;font-size:0.85rem;font-family:var(--mono);letter-spacing:0.1em;">✓ Message sent. I'll be in touch soon.</p>
+          <p id="form-error" style="display:none;color:#ff6b6b;font-size:0.85rem;font-family:var(--mono);letter-spacing:0.1em;">✕ Something went wrong. Try emailing directly.</p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <a href="mailto:jessehirvonen17@gmail.com" class="contact-detail-value">jessehirvonen17@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Instagram</span>
+          <a href="https://instagram.com/aurealyx" target="_blank" rel="noopener" class="contact-detail-value">@aurealyx</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Based in</span>
+          <span class="contact-detail-value">Finland — working globally</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Response time</span>
+          <span class="contact-detail-value">Within 1 business day</span>
+        </div>
+        <div class="divider-thin"></div>
+        <div style="background:var(--surface);border:1px solid var(--border);padding:1.5rem;border-radius:2px;">
+          <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Availability</p>
+          <p style="font-size:0.9rem;color:var(--text);margin-bottom:0.4rem;"><span style="color:var(--accent);">✦</span> Currently accepting new projects</p>
+          <p style="font-size:0.82rem;color:var(--muted);font-weight:300;">Slots are limited — reach out to secure yours.</p>
+        </div>
+        <div class="divider-thin"></div>
+        <p style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.8;">
+          Not sure what you need yet? No problem. Send a message and we'll figure it out together.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2026 Aurealyx. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#home">Back to top</a>
+    <a href="mailto:jessehirvonen17@gmail.com">Email</a>
+    <a href="https://instagram.com/aurealyx" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/manjojkg', {
+      method: 'POST',
+      body: new FormData(e.target),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      btn.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+    } else {
+      throw new Error('Send failed');
+    }
+  } catch {
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+    document.getElementById('form-error').style.display = 'block';
+  }
+}
+
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+
+if (hamburger && mobileNavOverlay) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNavOverlay.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileNavOverlay.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileNavOverlay.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNavOverlay.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNavOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileNavOverlay.classList.contains('open')) {
+      mobileNavOverlay.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNavOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      hamburger.focus();
+    }
+  });
+}
+
+// Nav scroll state
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+// Timeline reveal
+const timeline = document.getElementById('studio-timeline');
+if (timeline) {
+  const tlObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        tlObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  tlObserver.observe(timeline);
+}
+
+// Aurora parallax
+const auroraEl = document.querySelector('.aurora');
+if (auroraEl && window.matchMedia('(hover: hover)').matches) {
+  let ticking = false;
+  document.addEventListener('mousemove', e => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth  - 0.5) * 22;
+        const y = (e.clientY / window.innerHeight - 0.5) * 11;
+        auroraEl.style.transform = `translateX(calc(-50% + ${x}px)) translateY(${y}px)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(s => navObserver.observe(s));
+</script>
 </body>
 </html>
