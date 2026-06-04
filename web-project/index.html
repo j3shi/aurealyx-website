@@ -191,39 +191,42 @@
 <section id="process">
   <div class="max-w">
     <div class="process-content">
+
+      <!-- Steps column -->
       <div>
-        <h2 class="section-title">From idea<br>to live site.</h2>
-        <p class="section-sub" style="margin-bottom:0">Clear steps. No surprises. Delivery you can count on.</p>
+        <p class="section-label">// Process</p>
+        <h2 class="section-title" data-reveal>From idea<br>to live site.</h2>
+        <p class="section-sub" data-reveal data-delay="1" style="margin-bottom:0">Clear steps. No surprises. Delivery you can count on.</p>
         <div class="process-steps">
-          <div class="process-step">
+          <div class="process-step" data-reveal data-delay="1">
             <div class="step-num">01</div>
             <div class="step-body">
               <h4>Discovery Call</h4>
               <p>We talk about your goals, your audience, and what success looks like. I ask the right questions so nothing gets missed.</p>
             </div>
           </div>
-          <div class="process-step">
+          <div class="process-step" data-reveal data-delay="2">
             <div class="step-num">02</div>
             <div class="step-body">
               <h4>Scope & Proposal</h4>
               <p>You receive a clear written proposal — deliverables, timeline, and fixed price. No billing surprises.</p>
             </div>
           </div>
-          <div class="process-step">
+          <div class="process-step" data-reveal data-delay="3">
             <div class="step-num">03</div>
             <div class="step-body">
               <h4>Design & Build</h4>
               <p>I design in the browser with regular check-ins. You see progress as it happens, not at the very end.</p>
             </div>
           </div>
-          <div class="process-step">
+          <div class="process-step" data-reveal data-delay="4">
             <div class="step-num">04</div>
             <div class="step-body">
               <h4>Review & Revise</h4>
               <p>Two rounds of revisions included. We refine until everything feels right — down to the last detail.</p>
             </div>
           </div>
-          <div class="process-step">
+          <div class="process-step" data-reveal data-delay="5">
             <div class="step-num">05</div>
             <div class="step-body">
               <h4>Launch</h4>
@@ -232,61 +235,61 @@
           </div>
         </div>
       </div>
-      <div class="process-visual">
-        <div class="mockup-browser">
-          <div class="browser-bar">
-            <div class="dot-red"></div>
-            <div class="dot-yellow"></div>
-            <div class="dot-green"></div>
-            <div class="browser-url">yoursite.com</div>
-          </div>
-          <div class="browser-content">
-            <div class="mock-hero-bar"></div>
-            <div class="mock-sub-bar w80"></div>
-            <div class="mock-sub-bar w60"></div>
-            <div class="mock-img"></div>
-            <div class="mock-cards">
-              <div class="mock-card">
-                <div class="mock-card-line accent"></div>
-                <div class="mock-card-line"></div>
-              </div>
-              <div class="mock-card">
-                <div class="mock-card-line accent"></div>
-                <div class="mock-card-line"></div>
-              </div>
-              <div class="mock-card">
-                <div class="mock-card-line accent"></div>
-                <div class="mock-card-line"></div>
+
+      <!-- 3D visual column -->
+      <div class="process-3d-wrap">
+        <div class="float-orbit">
+          <div class="card-stack" id="card-stack">
+
+            <!-- Layer 1: back — code -->
+            <div class="card-layer card-back">
+              <div class="code-lines">
+                <div class="cl cl-kw" style="width:34%"></div>
+                <div class="cl cl-str indent" style="width:58%"></div>
+                <div class="cl cl-fn indent" style="width:44%"></div>
+                <div class="cl cl-cm indent" style="width:28%"></div>
+                <div class="cl cl-kw" style="width:20%"></div>
+                <div class="cl cl-str indent" style="width:62%"></div>
+                <div class="cl cl-fn indent" style="width:38%"></div>
+                <div class="cl cl-cm" style="width:50%"></div>
+                <div class="cl cl-kw indent" style="width:30%"></div>
+                <div style="margin-top:4px;"><div class="code-cursor"></div></div>
               </div>
             </div>
-            <div style="margin-top:1.2rem; display:flex; gap:0.6rem;">
-              <div style="background:rgba(168,85,247,0.25); width:80px; height:28px; border-radius:2px;"></div>
-              <div style="background:var(--border); width:80px; height:28px; border-radius:2px;"></div>
+
+            <!-- Layer 2: mid — wireframe -->
+            <div class="card-layer card-mid">
+              <div class="wf-bar" style="width:52%"></div>
+              <div class="wf-sub" style="width:80%"></div>
+              <div class="wf-sub" style="width:65%"></div>
+              <div class="wf-img"></div>
+              <div class="wf-row">
+                <div class="wf-chip"></div>
+                <div class="wf-chip" style="flex:1.4"></div>
+              </div>
             </div>
+
+            <!-- Layer 3: front — live site -->
+            <div class="card-layer card-front">
+              <div class="live-aurora"></div>
+              <div class="live-top"></div>
+              <div class="live-sub w80"></div>
+              <div class="live-sub w60"></div>
+              <div class="live-img"></div>
+              <div class="live-btn"></div>
+            </div>
+
           </div>
         </div>
-        <div style="margin-top:1rem; padding:1.2rem; border:1px solid var(--border); border-radius:2px; background:var(--surface);">
-          <p style="font-family:var(--mono); font-size:0.68rem; color:var(--gold); letter-spacing:0.12em; margin-bottom:0.5rem;">LIGHTHOUSE SCORE</p>
-          <div style="display:flex; gap:1.5rem;">
-            <div style="text-align:center;">
-              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">98</div>
-              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Performance</div>
-            </div>
-            <div style="text-align:center;">
-              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">100</div>
-              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Accessibility</div>
-            </div>
-            <div style="text-align:center;">
-              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">100</div>
-              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">Best Practices</div>
-            </div>
-            <div style="text-align:center;">
-              <div style="font-size:1.4rem; font-weight:700; color:#27c93f;">96</div>
-              <div style="font-size:0.65rem; color:var(--muted); font-family:var(--mono);">SEO</div>
-            </div>
-          </div>
+
+        <!-- Layer labels -->
+        <div class="stack-labels">
+          <span class="stack-label">Code</span>
+          <span class="stack-label">Design</span>
+          <span class="stack-label stack-label-active">Live</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -497,6 +500,38 @@ if (auroraEl && window.matchMedia('(hover: hover)').matches) {
       ticking = true;
     }
   }, { passive: true });
+}
+
+// Process 3D scroll rotation
+const processSection = document.getElementById('process');
+const cardStack = document.getElementById('card-stack');
+const stackLabels = document.querySelectorAll('.stack-label');
+
+if (processSection && cardStack) {
+  const update3D = () => {
+    const rect = processSection.getBoundingClientRect();
+    const total = rect.height + window.innerHeight;
+    const traveled = window.innerHeight - rect.top;
+    const p = Math.max(0, Math.min(1, traveled / total));
+
+    const rotY = -30 + p * 60;      // -30deg → +30deg
+    const rotX = 20  - p * 30;      // 20deg  → -10deg
+    const scale = 0.9 + p * 0.14;
+
+    cardStack.style.transform =
+      `rotateY(${rotY}deg) rotateX(${rotX}deg) scale(${scale})`;
+
+    // highlight the active layer label based on progress
+    if (stackLabels.length === 3) {
+      const active = p < 0.33 ? 0 : p < 0.66 ? 1 : 2;
+      stackLabels.forEach((l, i) => {
+        l.classList.toggle('stack-label-active', i === active);
+      });
+    }
+  };
+
+  window.addEventListener('scroll', update3D, { passive: true });
+  update3D();
 }
 
 // Active nav link
